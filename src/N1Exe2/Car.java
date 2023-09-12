@@ -3,7 +3,7 @@ package N1Exe2;
 public class Car {
 	
 	private static final String brandCar = "Mazda";
-	private static String modelCar;
+	private static String modelCar = "M1";
 	private final int pontencyCar;
 	
 	public Car () {
@@ -11,16 +11,11 @@ public class Car {
 	}
 	
 	public Car (String modelCar) {
-		Car.modelCar = modelCar;
 		this.pontencyCar= 200;
 	}
 
 	public static String getModelCar() {
 		return modelCar;
-	}
-
-	public static void setModelCar(String modelCar) {
-		Car.modelCar = modelCar;
 	}
 
 	public static String getBrandcar() {
@@ -34,7 +29,7 @@ public class Car {
 	//Mothod class
 	
 	public static String brakeCar () {
-		return "The car model " + Car.modelCar + "is braking";
+		return "The car model " + Car.modelCar + " is braking";
 	}
 	
 	public String accelerateCar () {

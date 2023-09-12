@@ -5,7 +5,7 @@ public class ExecuteInstrument {
 	public static void main(String[] args) {
 		
 		
-		// la carga puede ser provocada por la creación de la primera instancia de la clase:
+		// la carga puede ser provocada por la creación de la primera instancia de la clase (descomentar y executar):
 		/*Instrument trumpet = new Wind_Instrument("Trumpet", 500);
 		Instrument guitar = new String_Instrument("Guitar", 700);
 		Instrument drum = new Percussion_Instrument("Drum", 600);
