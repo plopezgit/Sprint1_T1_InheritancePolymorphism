@@ -29,13 +29,13 @@ public class News_Tennis extends News {
 	public void setNewsTennisRefPlayer(String newsTennisRefPlayer) {
 		this.newsTennisRefPlayer = newsTennisRefPlayer;
 	}
-	
-	//Override methods
 
 	@Override
 	public String toString() {
 		return "News_Tennis [newsTennisRefCompetition=" + newsTennisRefCompetition + ", newsTennisRefPlayer="
-				+ newsTennisRefPlayer + "]";
+				+ newsTennisRefPlayer + ", newsID=" + newsID + ", getNewsTitle()=" + getNewsTitle() + ", getNewsBody()="
+				+ getNewsBody() + ", getNewsPoints()=" + getNewsPoints() + ", getNewsPrice()=" + getNewsPrice() + "]";
 	}
+	
 
 }

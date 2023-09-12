@@ -40,13 +40,13 @@ public class News_Football extends News {
 	public void setNewsFootbalRefPlayer(String newsFootbalRefPlayer) {
 		this.newsFootbalRefPlayer = newsFootbalRefPlayer;
 	}
-	
-	//Override methods
-	
+
 	@Override
 	public String toString() {
-		return "News_Football [newsFootballRefCompetition=" + newsFootballRefCompetition + ", newsFooballRefClub="
-				+ newsFootballRefClub + ", newsFootbalRefPlayer=" + newsFootbalRefPlayer + "]";
+		return "News_Football [newsFootballRefCompetition=" + newsFootballRefCompetition + ", newsFootballRefClub="
+				+ newsFootballRefClub + ", newsFootbalRefPlayer=" + newsFootbalRefPlayer + ", newsID=" + newsID
+				+ ", getNewsTitle()=" + getNewsTitle() + ", getNewsBody()=" + getNewsBody() + ", getNewsPoints()="
+				+ getNewsPoints() + ", getNewsPrice()=" + getNewsPrice() + "]";
 	}
 	
 }

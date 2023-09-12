@@ -20,14 +20,13 @@ public class News_F1 extends News {
 	public void setNewsF1RefTeam(String newsF1RefTeam) {
 		this.newsF1RefTeam = newsF1RefTeam;
 	}
-
-	//Override methods
 	
 	@Override
 	public String toString() {
-		return "News_F1 [newsF1RefTeam=" + newsF1RefTeam + "]";
+		return "News_F1 [newsF1RefTeam=" + newsF1RefTeam + ", newsID=" + newsID + ", getNewsTitle()=" + getNewsTitle()
+				+ ", getNewsBody()=" + getNewsBody() + ", getNewsPoints()=" + getNewsPoints() + ", getNewsPrice()="
+				+ getNewsPrice() + "]";
 	}
-	
-	
+
 
 }

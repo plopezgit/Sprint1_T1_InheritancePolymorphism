@@ -60,6 +60,13 @@ public class News {
 	public void setNewsPrice(int newsPrice) {
 		this.newsPrice = newsPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "News [newsID=" + newsID + ", newsTitle=" + newsTitle + ", newsBody=" + newsBody + ", newsPoints="
+				+ newsPoints + ", newsPrice=" + newsPrice + "]";
+	}
 	
 
+	
 }

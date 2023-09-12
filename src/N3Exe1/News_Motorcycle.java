@@ -20,14 +20,12 @@ public class News_Motorcycle extends News {
 	public void setNewsMotorCycleRefTeam(String newsMotorCycleRefTeam) {
 		this.newsMotorCycleRefTeam = newsMotorCycleRefTeam;
 	}
-	
-	//Override methods
-	
+
 	@Override
 	public String toString() {
-		return "News_Motorcycle [newsMotorCycleRefTeam=" + newsMotorCycleRefTeam + "]";
+		return "News_Motorcycle [newsMotorCycleRefTeam=" + newsMotorCycleRefTeam + ", newsID=" + newsID
+				+ ", getNewsTitle()=" + getNewsTitle() + ", getNewsBody()=" + getNewsBody() + ", getNewsPoints()="
+				+ getNewsPoints() + ", getNewsPrice()=" + getNewsPrice() + "]";
 	}
-	
-	
 
 }

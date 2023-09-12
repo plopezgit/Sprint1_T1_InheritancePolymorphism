@@ -152,7 +152,6 @@ public class ExecuteAdminSportRadaction {
 }
 
 
-
 /*
  * En una redacción de noticias deportivas tienen las noticias clasificadas por deportes: OK
  * fútbol, baloncesto, tenis, F1 y motociclismo. OK
