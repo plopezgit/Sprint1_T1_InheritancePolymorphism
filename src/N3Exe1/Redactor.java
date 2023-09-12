@@ -4,16 +4,14 @@ import java.util.ArrayList;
 
 public class Redactor {
 	
-	private String redactorName;
 	protected final String redactorDNI;
-	private int redactorSalary;
+	private String redactorName;
+	private static int redactorSalary = 1500;
 	protected ArrayList<News> redactorNewsListAssigned;
 	
-	public Redactor(String redactorName, String redactorDNI) {
-
-		this.redactorName = redactorName;
+	public Redactor(String redactorDNI, String redactorName) {
 		this.redactorDNI = redactorDNI;
-		redactorSalary = 1500;
+		this.redactorName = redactorName;
 		redactorNewsListAssigned = new ArrayList<News>();
 	}
 
@@ -27,10 +25,6 @@ public class Redactor {
 
 	public int getRedactorSalary() {
 		return redactorSalary;
-	}
-
-	public void setRedactorSalary(int redactorSalary) {
-		this.redactorSalary = redactorSalary;
 	}
 
 	public String getRedactorDNI() {
@@ -67,10 +61,17 @@ public class Redactor {
 		return redactorNewsListAssigned;
 	}
 	
+	public static int incrementSalary (int salaryIncrement) {
+		int salaryIncremented = redactorSalary + salaryIncrement;
+		redactorSalary = salaryIncremented;
+		
+		return redactorSalary;
+	}
+	
 
 	@Override
 	public String toString() {
-		return "Redactor [redactorName=" + redactorName + ", redactorDNI=" + redactorDNI + ", redactorSalary="
+		return "Redactor [Name=" + redactorName + ", DNI=" + redactorDNI + ", Salary="
 				+ redactorSalary + "]";
 	}
 }

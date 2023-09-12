@@ -22,8 +22,8 @@ public class SportRedaction {
 		return redactorList;
 	}
 
-	public ArrayList<Redactor> createRedactor (String redactorName, String redactorDNI) {
-		redactorList.add(new Redactor (redactorName, redactorDNI));	
+	public ArrayList<Redactor> createRedactor (String redactorDNI, String redactorName) {
+		redactorList.add(new Redactor (redactorDNI, redactorName));	
 		return redactorList;
 	}
 	
@@ -104,7 +104,7 @@ public class SportRedaction {
 	
 	@Override
 	public String toString() {
-		return "SportRedaction [newsList=" + newsList + ", redactorList=" + redactorList + "]";
+		return "SportRedaction [News=" + newsList + ", Redactors=" + redactorList + "]";
 	}
 	
 }

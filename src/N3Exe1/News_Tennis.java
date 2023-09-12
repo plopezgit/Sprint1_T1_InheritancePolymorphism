@@ -29,12 +29,35 @@ public class News_Tennis extends News {
 	public void setNewsTennisRefPlayer(String newsTennisRefPlayer) {
 		this.newsTennisRefPlayer = newsTennisRefPlayer;
 	}
+	
+	//Class methods
+	
+	public int newsPriceCalculation () {
+		if (newsTennisRefCompetition.equals("Wimbledon")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 150);
+		}
+		if (newsTennisRefPlayer.equals("Federer") || newsTennisRefPlayer.equals("Nadal") || newsTennisRefPlayer.equals("Djocovic")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 100);
+		}
+		
+		return super.getNewsInitialPrice();
+	}
+	
+	public int newsPointCalculation () {
+		if (newsTennisRefCompetition.equals("Wimbledon")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 3);
+		}
+		if (newsTennisRefPlayer.equals("Federer") || newsTennisRefPlayer.equals("Nadal") || newsTennisRefPlayer.equals("Djocovic")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 3);
+		}
+		
+		return super.getNewsInitialPoints();
+	}
 
 	@Override
 	public String toString() {
-		return "News_Tennis [newsTennisRefCompetition=" + newsTennisRefCompetition + ", newsTennisRefPlayer="
-				+ newsTennisRefPlayer + ", newsID=" + newsID + ", getNewsTitle()=" + getNewsTitle() + ", getNewsBody()="
-				+ getNewsBody() + ", getNewsPoints()=" + getNewsPoints() + ", getNewsPrice()=" + getNewsPrice() + "]";
+		return "Tennis news [" + super.toString() + ", Competition=" + newsTennisRefCompetition + ", Player="
+				+ newsTennisRefPlayer + "]";
 	}
 	
 

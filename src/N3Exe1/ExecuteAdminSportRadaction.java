@@ -15,9 +15,12 @@ public class ExecuteAdminSportRadaction {
 				+ "(6)Assign news to Redactor.\n"
 				+ "(7)Unassign news to Redactor.\n"
 				+ "(8)Check news list by redactor.\n"
-				+ "(9)Exit.\n";
+				+ "(9)Calculate a news price.\n"
+				+ "(10)Calculate a news points.\n"
+				+ "(11)Increment Sport News Redactors base salary.\n"
+				+ "(12)Exit.\n";
 		
-		String submenu = "What type of news do you ant to create?\n"
+		String submenu = "What type of news do you want to create?\n"
 				+ "(1)Football news.\n"
 				+ "(2)Basketball news.\n"
 				+ "(3)Tennis news.\n"
@@ -39,7 +42,7 @@ public class ExecuteAdminSportRadaction {
 				System.out.println(deleteNewsOfRedaction(redaction, redaction.existNews(Tool.inputInt ("News ID: "))));
 				break;
 			case 4:
-				System.out.println("Redactor created: " + createRedactorOfRedaction(redaction, Tool.inputString ("Name: "), Tool.inputString ("Redactor DNI: ")));
+				System.out.println("Redactor created: " + createRedactorOfRedaction(redaction, Tool.inputString ("Redactor DNI: "), Tool.inputString ("Name: ")));
 				break;
 			case 5:
 				System.out.println("Redactor deleted: " + deleteRedactorOfRedaction(redaction, redaction.existRedactor(Tool.inputString ("Redactor DNI: "))));
@@ -54,13 +57,22 @@ public class ExecuteAdminSportRadaction {
 				System.out.println(getNewsListofRedactionByRedactor(redaction, redaction.existRedactor(Tool.inputString ("Redactor DNI: "))));
 				break;
 			case 9:
+				System.out.println(calculatePriceOfNewsOfRedaction(redaction, redaction.existNews(Tool.inputInt ("News ID: "))));
+				break;
+			case 10:
+				System.out.println(calculatePointOfNewsOfRedaction(redaction, redaction.existNews(Tool.inputInt ("News ID: "))));
+				break;
+			case 11:
+				System.out.println("Salary incremented: " + Redactor.incrementSalary(Tool.inputInt ("Salary base increment: ")));
+				break;
+			case 12:
 				System.out.println("Adios, vuelve pronto");
 				break;
 			default:
 				System.out.println("Opcion no disponible.\n");
 				
 			}
-		} while (opcionMain !=9);
+		} while (opcionMain !=12);
 
 	}
 		
@@ -112,8 +124,8 @@ public class ExecuteAdminSportRadaction {
 		return result;
 	}
 	
-	public static SportRedaction createRedactorOfRedaction (SportRedaction redaction, String redactorName, String redactorDNI) {
-		redaction.createRedactor(redactorName, redactorDNI);
+	public static SportRedaction createRedactorOfRedaction (SportRedaction redaction, String redactorDNI, String redactorName) {
+		redaction.createRedactor(redactorDNI, redactorName);
 		return redaction;
 	}
 	
@@ -148,6 +160,64 @@ public class ExecuteAdminSportRadaction {
 		
 		return result;
 	}
+	
+	public static String calculatePriceOfNewsOfRedaction (SportRedaction redaction, int newsIndex) {
+		String result = "";
+		if (newsIndex >-1) {
+			if (redaction.newsList.get(newsIndex) instanceof News_Football) {
+				News_Football newsAux = (News_Football)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPriceCalculation() + " EUR"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Basketball) {
+				News_Basketball newsAux = (News_Basketball)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPriceCalculation() + " EUR"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Tennis) {
+				News_Tennis newsAux = (News_Tennis)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPriceCalculation() + " EUR"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_F1) {
+				News_F1 newsAux = (News_F1)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPriceCalculation() + " EUR"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Motorcycle) {
+				News_Motorcycle newsAux = (News_Motorcycle)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPriceCalculation() + " EUR"; 
+			}
+		} else {
+			result = "El avion no existe en la lista.";
+		}
+		return result;
+	}
+	
+	public static String calculatePointOfNewsOfRedaction (SportRedaction redaction, int newsIndex) {
+		String result = "";
+		if (newsIndex >-1) {
+			if (redaction.newsList.get(newsIndex) instanceof News_Football) {
+				News_Football newsAux = (News_Football)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPointCalculation() + " Points"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Basketball) {
+				News_Basketball newsAux = (News_Basketball)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPointCalculation() + " Points"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Tennis) {
+				News_Tennis newsAux = (News_Tennis)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPointCalculation() + " Points"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_F1) {
+				News_F1 newsAux = (News_F1)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPointCalculation() + " Points"; 
+			}
+			else if (redaction.newsList.get(newsIndex) instanceof News_Motorcycle) {
+				News_Motorcycle newsAux = (News_Motorcycle)redaction.newsList.get(newsIndex);
+				result = newsAux.newsPointCalculation() + " Points"; 
+			}
+		} else {
+			result = "El avion no existe en la lista.";
+		}
+		return result;
+	}
 
 }
 
@@ -173,92 +243,65 @@ A continuación se explica cómo calcular el precio de cada noticia:
 
 Noticias de fútbol:
 Precio inicial: 300€ OK
-Liga de Campeones: 100€
-Barça o Madrid: 100€
-Ferran Torres o Benzema: 50€
+Liga de Campeones: 100€ OK
+Barça o Madrid: 100€ OK
+Ferran Torres o Benzema: 50€ OK
 
 Ejemplo: Una noticia que habla de un gol de Ferran Torres del Barça en la Liga de Campeones, tiene un precio de 550€.
 
-Noticias de baloncesto:
-Precio inicial: 250€
+Noticias de baloncesto: OK
+Precio inicial: 250€ 
 Euroliga: 75€
 Barça o Madrid: 75€
 
-Noticias de tenis:
-Precio inicial: 150€
+Noticias de tenis: OK
+Precio inicial: 150€ 
 Federer, Navidad o Djokovic: 100€
 
-Noticias de F1:
-Precio inicial: 100€
+Noticias de F1: OK
+Precio inicial: 100€ 
 Ferrari o Mercedes: 50€
 
-Noticias de motociclismo:
-Precio inicial: 100€
+Noticias de motociclismo: OK
+Precio inicial: 100€ 
 Honda o Yamaha: 50€
-
 
 Para calcular las puntuaciones de las noticias se siguen los siguientes criterios:
 
-Noticias de fútbol:
-
+Noticias de fútbol: OK
 5 Puntos.
-
 Liga de Campeones: 3 puntos
-
 Liga: 2 puntos
-
 Barça o Madrid: 1 punto
-
 Ferran Torres o Benzema: 1 punto
 
 Ejemplo: Una noticia que habla de un gol de Ferran Torres del Barça en la Liga de Campeones, tiene una puntuación de 10 puntos.
 
-
-Noticias de baloncesto:
-
+Noticias de baloncesto: OK
 4 puntos
-
 Euroliga: 3 puntos
-
 ACB: 2 puntos
-
 Barça o Madrid: 1 punto
 
-
-Noticias de Tenis:
-
+Noticias de Tenis: OK
 4 puntos
-
 Federer, Navidad o Djokovic: 3 puntos
 
-
-Noticias F1:
-
-4 puntos
-
+Noticias F1: OK
+4 puntos 
 Ferrari o Mercedes: 2 puntos
 
-
-Noticias de Motociclismo:
-
+Noticias de Motociclismo: OK
 3 puntos
-
 Honda o Yamaha: 3 puntos
-
 
 En la clase principal se debe hacer un menú con las siguientes opciones:
 
-1.- Introducir redactor.
-
-2.- Eliminar redactor.
-
-3.- Introducir noticia a un redactor.
-
-4.- Eliminar noticia (debe pedir redactor y titular de la noticia).
-
-5.- Mostrar todas las noticias por redactor.
-
+1.- Introducir redactor. OK
+2.- Eliminar redactor. OK
+3.- Introducir noticia a un redactor. OK
+4.- Eliminar noticia (debe pedir redactor y titular de la noticia). OK
+5.- Mostrar todas las noticias por redactor. OK
 6.- Calcular puntuación de la noticia.
-
 7.- Calcular precio-noticia.
  */

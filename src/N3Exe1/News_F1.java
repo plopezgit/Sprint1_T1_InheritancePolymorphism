@@ -21,11 +21,27 @@ public class News_F1 extends News {
 		this.newsF1RefTeam = newsF1RefTeam;
 	}
 	
+	//Class methods
+	
+	public int newsPriceCalculation () {
+		if (newsF1RefTeam.equals("Honda") || newsF1RefTeam.equals("Yamaha")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 50);
+		}
+		
+		return super.getNewsInitialPrice();
+	}
+	
+	public int newsPointCalculation () {
+		if (newsF1RefTeam.equals("Honda") || newsF1RefTeam.equals("Yamaha")) {
+			super.setNewsInitialPoints(super.getNewsInitialPoints() + 3);
+		}
+		
+		return super.getNewsInitialPoints();
+	}
+	
 	@Override
 	public String toString() {
-		return "News_F1 [newsF1RefTeam=" + newsF1RefTeam + ", newsID=" + newsID + ", getNewsTitle()=" + getNewsTitle()
-				+ ", getNewsBody()=" + getNewsBody() + ", getNewsPoints()=" + getNewsPoints() + ", getNewsPrice()="
-				+ getNewsPrice() + "]";
+		return "F1 news [" + super.toString() + ", Team=" + newsF1RefTeam + "]";
 	}
 
 

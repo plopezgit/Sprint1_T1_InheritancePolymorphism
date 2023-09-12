@@ -5,20 +5,20 @@ public class News {
 	protected int newsID;
 	private String newsTitle;
 	private String newsBody;
-	private int newsPoints;
-	private int newsPrice;
+	private int newsInitialPoints;
+	private int newsInitialPrice;
 	
 	
 	public News () {
 	
 	}
 
-	public News (int newsID, String newsTitle, String newsBody, int newsPoints, int newsPrice) {
+	public News (int newsID, String newsTitle, String newsBody, int newsInitialPoints, int newsInitialPrice) {
 		this.newsID = newsID;
 		this.newsTitle = newsTitle;
 		newsBody = "";
-		this.newsPoints = newsPoints;
-		this.newsPrice = newsPrice;
+		this.newsInitialPoints = newsInitialPoints;
+		this.newsInitialPrice = newsInitialPrice;
 	}
 
 	public int getNewsID() {
@@ -45,28 +45,25 @@ public class News {
 		this.newsBody = newsBody;
 	}
 
-	public int getNewsPoints() {
-		return newsPoints;
+	public int getNewsInitialPoints() {
+		return newsInitialPoints;
 	}
 
-	public void setNewsPoints(int newsPoints) {
-		this.newsPoints = newsPoints;
+	public void setNewsInitialPoints(int newsInitialPoints) {
+		this.newsInitialPoints = newsInitialPoints;
 	}
 
-	public int getNewsPrice() {
-		return newsPrice;
+	public int getNewsInitialPrice() {
+		return newsInitialPrice;
 	}
 
-	public void setNewsPrice(int newsPrice) {
-		this.newsPrice = newsPrice;
+	public void setNewsInitialPrice(int newsInitialPrice) {
+		this.newsInitialPrice = newsInitialPrice;
 	}
 
 	@Override
 	public String toString() {
-		return "News [newsID=" + newsID + ", newsTitle=" + newsTitle + ", newsBody=" + newsBody + ", newsPoints="
-				+ newsPoints + ", newsPrice=" + newsPrice + "]";
+		return "News [ID=" + newsID + ", Title=" + newsTitle + ", Body=" + newsBody + "]";
 	}
-	
-
 	
 }

@@ -31,12 +31,39 @@ public class News_Basketball extends News {
 		this.newsBasketballRefClub = newsBasketballRefClub;
 	}
 	
+	//Class methods
+	
+	public int newsPriceCalculation () {
+		if (newsBasketballRefCompetition.equals("Euroliga")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 250);
+		}
+		if (newsBasketballRefClub.equals("Barca") || newsBasketballRefClub.equals("Madrid")) {
+			super.setNewsInitialPrice(super.getNewsInitialPrice() + 75);
+		} 
+		
+		return super.getNewsInitialPrice();
+	}
+	
+	public int newsPointCalculation () {
+		if (newsBasketballRefCompetition.equals("Euroliga")) {
+			super.setNewsInitialPoints(super.getNewsInitialPoints() + 3);
+		}
+		if (newsBasketballRefCompetition.equals("ABC")) { 
+			super.setNewsInitialPoints(super.getNewsInitialPoints() + 2);
+		}
+		if (newsBasketballRefClub.equals("Barca") || newsBasketballRefClub.equals("Madrid")) {
+			super.setNewsInitialPoints(super.getNewsInitialPoints() + 1);
+		} 
+		
+		return super.getNewsInitialPoints();
+	}
+	
 	//Override methods
 	
 	@Override
 	public String toString() {
-		return "News_Basketball [newsBasketballRefCompetition=" + newsBasketballRefCompetition
-				+ ", newsBasketballRefClub=" + newsBasketballRefClub + "]";
+		return "Basketball news [" + super.toString() + ", Competition=" + newsBasketballRefCompetition
+				+ ", Club=" + newsBasketballRefClub + "]";
 	}
 	
 }
