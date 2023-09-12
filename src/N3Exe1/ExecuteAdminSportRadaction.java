@@ -24,16 +24,16 @@ public class ExecuteAdminSportRadaction {
 				+ "(1)Football news.\n"
 				+ "(2)Basketball news.\n"
 				+ "(3)Tennis news.\n"
-				+ "(3)F1 news.\n"
-				+ "(3)MotorCycle news.\n"
-				+ "(4)Volver.\n";
+				+ "(4)F1 news.\n"
+				+ "(5)MotorCycle news.\n"
+				+ "(6)Volver.\n";
 		
 		int opcionMain = 0;
 		
 		do {
 			switch (opcionMain = Tool.inputInt("\n" + mainMenu)) {
 			case 1:
-				System.out.println("News created: " + createNewsOnRedaction(redaction ,submenu));
+				System.out.println(createNewsOnRedaction(redaction ,submenu));
 				break;
 			case 2:
 				System.out.println("News: \n" + getNewsListofRedaction(redaction));
@@ -84,16 +84,18 @@ public class ExecuteAdminSportRadaction {
 			redaction.createNewsFootball(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Football Competition: "), Tool.inputString ("Football Club: "), Tool.inputString ("Football Player: "));  
 			break;
 		case 2:
-			redaction.createNewsBasketball(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Football Competition: "), Tool.inputString ("Football Club: "));  
+			redaction.createNewsBasketball(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Bastketball Competition: "), Tool.inputString ("Bastketball Club: "));  
 			break;
 		case 3:
-			redaction.createNewsTennis(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Football Competition: "), Tool.inputString ("Football Player: "));  
+			redaction.createNewsTennis(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Tennis Competition: "), Tool.inputString ("Tennis Player: "));  
 			break;
 		case 4:
-			redaction.createNewsF1(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Football Team: "));  
+			redaction.createNewsF1(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("F1 Team: "));  
 			break;
 		case 5:
-			redaction.createNewsMotorcycle(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Football Team: "));  
+			redaction.createNewsMotorcycle(Tool.inputInt ("Id News: "), Tool.inputString ("Title news: "), Tool.inputString ("Motorcycle Team: "));  
+			break;
+		case 6:
 			break;
 		default:
 			System.out.println("Opcion no disponible.\n");
