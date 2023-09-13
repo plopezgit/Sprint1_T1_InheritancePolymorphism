@@ -3,8 +3,15 @@ package N3Exe1;
 import java.util.ArrayList;
 
 public class SportRedaction {
-
+	/*
+	 * Feedback.2. Protected?
+	 */
 	protected ArrayList<News> newsList;
+	/*
+	 * Feedback.3. Al tener una lista de redacciones en la clase Redactor 
+	 * y una lista de redactores en la clase Redacciones 
+	 * esto podría ocasionar redundancia de datos.
+	 */
 	protected ArrayList<Redactor> redactorList;
 	
 	public SportRedaction () {
@@ -69,6 +76,11 @@ public class SportRedaction {
 		redactorList.remove(redactorIndex);
 		return redactorList;
 	}
+	
+	/*
+	 * Feedback.1. Using Java API to get the index of an object in a list.
+	 * Ref: https://refactorizando.com/encontrar-elemento-lista-java/
+	 */
 	
 	public int existNews (int newsID) {
 		int newsIndex = -1;

@@ -3,10 +3,17 @@ package N3Exe1;
 import java.util.ArrayList;
 
 public class Redactor {
-	
+	/*
+	 * Feedback.2. Protected?
+	 */
 	protected final String redactorDNI;
 	private String redactorName;
 	private static int redactorSalary = 1500;
+	/*
+	 * Feedback.3. Al tener una lista de redacciones en la clase Redactor 
+	 * y una lista de redactores en la clase Redacciones 
+	 * esto podría ocasionar redundancia de datos.
+	 */
 	protected ArrayList<News> redactorNewsListAssigned;
 	
 	public Redactor(String redactorDNI, String redactorName) {
