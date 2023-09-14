@@ -3,16 +3,10 @@ package N3Exe1;
 import java.util.ArrayList;
 
 public class SportRedaction {
-	/*
-	 * Feedback.2. Protected?
-	 */
-	protected ArrayList<News> newsList;
-	/*
-	 * Feedback.3. Al tener una lista de redacciones en la clase Redactor 
-	 * y una lista de redactores en la clase Redacciones 
-	 * esto podría ocasionar redundancia de datos.
-	 */
-	protected ArrayList<Redactor> redactorList;
+
+	private ArrayList<News> newsList;
+
+	private ArrayList<Redactor> redactorList;
 	
 	public SportRedaction () {
 		newsList = new ArrayList<News>();
@@ -77,38 +71,17 @@ public class SportRedaction {
 		return redactorList;
 	}
 	
-	/*
-	 * Feedback.1. Using Java API to get the index of an object in a list.
-	 * Ref: https://refactorizando.com/encontrar-elemento-lista-java/
-	 */
-	
 	public int existNews (int newsID) {
-		int newsIndex = -1;
-		int i = 0;
-
-		while (newsIndex==-1 && newsList.size() != i) {
-			if (newsList.get(i).newsID == (newsID)) {
-				newsIndex = i;
-			}else {
-				newsIndex = -1;
-				i++;		
-			}
-		}
+		News news = new News(newsID);
+		int newsIndex = newsList.indexOf(news);
+		
 		return newsIndex;
 	}
 	
 	public int existRedactor (String redactorDNI) {
-		int redactorIndex = -1;
-		int i = 0;
-
-		while (redactorIndex==-1 && redactorList.size() != i) {
-			if (redactorList.get(i).redactorDNI.equals(redactorDNI)) {
-				redactorIndex = i;
-			}else {
-				redactorIndex = -1;
-				i++;		
-			}
-		}
+		Redactor redactor = new Redactor(redactorDNI);
+		int redactorIndex = redactorList.indexOf(redactor);
+		
 		return redactorIndex;
 	}
 	

@@ -2,7 +2,7 @@ package N3Exe1;
 
 public class News {
 	
-	protected int newsID;
+	private int newsID;
 	private String newsTitle;
 	private String newsBody;
 	private int newsInitialPoints;
@@ -11,6 +11,10 @@ public class News {
 	
 	public News () {
 	
+	}
+	
+	public News (int newsID) {
+		this.newsID = newsID;
 	}
 
 	public News (int newsID, String newsTitle, String newsBody, int newsInitialPoints, int newsInitialPrice) {
@@ -59,6 +63,26 @@ public class News {
 
 	public void setNewsInitialPrice(int newsInitialPrice) {
 		this.newsInitialPrice = newsInitialPrice;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + newsID;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof News))
+			return false;
+		News other = (News) obj;
+		if (newsID != other.newsID)
+			return false;
+		return true;
 	}
 
 	@Override

@@ -9,6 +9,10 @@ public class News_Football extends News {
 	public News_Football () {
 	
 	}
+	
+	public News_Football (int newsID) {
+		super(newsID);
+	}
 
 	public News_Football (int newsID, String newsTitle, String newsFootballRefCompetition, String newsFootballRefClub, String newsFootbalRefPlayer) {
 		super(newsID, newsTitle, "", 5, 300);

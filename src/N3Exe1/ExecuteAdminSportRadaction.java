@@ -107,7 +107,7 @@ public class ExecuteAdminSportRadaction {
 	public static String assignNewsToRedactorofRedaction (SportRedaction redaction, int redactorIndex, int newsIndex) {
 		String result;
 		if (redactorIndex != -1 && newsIndex != -1 ) {
-			redaction.redactorList.get(redactorIndex).assignNewsToRedactor(redaction, newsIndex);
+			redaction.getRedactorList().get(redactorIndex).assignNewsToRedactor(redaction, newsIndex);
 			result = "News assigned";
 		} else {
 			result = "It si not posssible to assign the news";
@@ -118,7 +118,7 @@ public class ExecuteAdminSportRadaction {
 	public static String unassignNewsToRedactorofRedaction (SportRedaction redaction, int redactorIndex, int newsIndex) {
 		String result;
 		if (redactorIndex != -1 && newsIndex != -1 ) {
-			redaction.redactorList.get(redactorIndex).unassignNewsToRedactor(redaction, newsIndex);
+			redaction.getRedactorList().get(redactorIndex).unassignNewsToRedactor(redaction, newsIndex);
 			result = "News unassigned";
 		} else {
 			result = "It si not posssible to unassign the news";
@@ -148,7 +148,7 @@ public class ExecuteAdminSportRadaction {
 	}
 
 	public static String getNewsListofRedactionByRedactor (SportRedaction redaction, int redactorIndex) {	
-		return redaction.redactorList.get(redactorIndex).parseRedactorNewsListAssigned();
+		return redaction.getRedactorList().get(redactorIndex).parseRedactorNewsListAssigned();
 	}
 	
 	public static String deleteNewsOfRedaction (SportRedaction redaction, int newsIndex) {
@@ -166,24 +166,24 @@ public class ExecuteAdminSportRadaction {
 	public static String calculatePriceOfNewsOfRedaction (SportRedaction redaction, int newsIndex) {
 		String result = "";
 		if (newsIndex >-1) {
-			if (redaction.newsList.get(newsIndex) instanceof News_Football) {
-				News_Football newsAux = (News_Football)redaction.newsList.get(newsIndex);
+			if (redaction.getNewsList().get(newsIndex) instanceof News_Football) {
+				News_Football newsAux = (News_Football)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPriceCalculation() + " EUR"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Basketball) {
-				News_Basketball newsAux = (News_Basketball)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Basketball) {
+				News_Basketball newsAux = (News_Basketball)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPriceCalculation() + " EUR"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Tennis) {
-				News_Tennis newsAux = (News_Tennis)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Tennis) {
+				News_Tennis newsAux = (News_Tennis)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPriceCalculation() + " EUR"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_F1) {
-				News_F1 newsAux = (News_F1)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_F1) {
+				News_F1 newsAux = (News_F1)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPriceCalculation() + " EUR"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Motorcycle) {
-				News_Motorcycle newsAux = (News_Motorcycle)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Motorcycle) {
+				News_Motorcycle newsAux = (News_Motorcycle)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPriceCalculation() + " EUR"; 
 			}
 		} else {
@@ -195,24 +195,24 @@ public class ExecuteAdminSportRadaction {
 	public static String calculatePointOfNewsOfRedaction (SportRedaction redaction, int newsIndex) {
 		String result = "";
 		if (newsIndex >-1) {
-			if (redaction.newsList.get(newsIndex) instanceof News_Football) {
-				News_Football newsAux = (News_Football)redaction.newsList.get(newsIndex);
+			if (redaction.getNewsList().get(newsIndex) instanceof News_Football) {
+				News_Football newsAux = (News_Football)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPointCalculation() + " Points"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Basketball) {
-				News_Basketball newsAux = (News_Basketball)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Basketball) {
+				News_Basketball newsAux = (News_Basketball)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPointCalculation() + " Points"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Tennis) {
-				News_Tennis newsAux = (News_Tennis)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Tennis) {
+				News_Tennis newsAux = (News_Tennis)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPointCalculation() + " Points"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_F1) {
-				News_F1 newsAux = (News_F1)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_F1) {
+				News_F1 newsAux = (News_F1)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPointCalculation() + " Points"; 
 			}
-			else if (redaction.newsList.get(newsIndex) instanceof News_Motorcycle) {
-				News_Motorcycle newsAux = (News_Motorcycle)redaction.newsList.get(newsIndex);
+			else if (redaction.getNewsList().get(newsIndex) instanceof News_Motorcycle) {
+				News_Motorcycle newsAux = (News_Motorcycle)redaction.getNewsList().get(newsIndex);
 				result = newsAux.newsPointCalculation() + " Points"; 
 			}
 		} else {

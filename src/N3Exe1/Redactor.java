@@ -3,23 +3,20 @@ package N3Exe1;
 import java.util.ArrayList;
 
 public class Redactor {
-	/*
-	 * Feedback.2. Protected?
-	 */
-	protected final String redactorDNI;
+	
+	private final String redactorDNI;
 	private String redactorName;
 	private static int redactorSalary = 1500;
-	/*
-	 * Feedback.3. Al tener una lista de redacciones en la clase Redactor 
-	 * y una lista de redactores en la clase Redacciones 
-	 * esto podría ocasionar redundancia de datos.
-	 */
-	protected ArrayList<News> redactorNewsListAssigned;
+	private ArrayList<News> newsAssignedList;
 	
 	public Redactor(String redactorDNI, String redactorName) {
 		this.redactorDNI = redactorDNI;
 		this.redactorName = redactorName;
-		redactorNewsListAssigned = new ArrayList<News>();
+		newsAssignedList = new ArrayList<News>();
+	}
+
+	public Redactor(String redactorDNI) {
+		this.redactorDNI = redactorDNI;
 	}
 
 	public String getRedactorName() {
@@ -39,31 +36,31 @@ public class Redactor {
 	}
 	
 	public ArrayList<News> getRedactorNewsListAssigned() {
-		return redactorNewsListAssigned;
+		return newsAssignedList;
 	}
 
 	public void setRedactorNewsListAssigned(ArrayList<News> redactorNewsListAssigned) {
-		this.redactorNewsListAssigned = redactorNewsListAssigned;
+		this.newsAssignedList = redactorNewsListAssigned;
 	}
 	
 	// Class methods
 	
 	public ArrayList<News> assignNewsToRedactor (SportRedaction redaction, int newsIndex) {
-		redactorNewsListAssigned.add(redaction.newsList.get(newsIndex));
-	return redactorNewsListAssigned;
+		newsAssignedList.add(redaction.getNewsList().get(newsIndex));
+	return newsAssignedList;
 	
 	}
 	
 	public ArrayList<News> unassignNewsToRedactor (SportRedaction redaction, int newsIndex) {
-		redactorNewsListAssigned.remove(redaction.newsList.get(newsIndex));
-	return redactorNewsListAssigned;
+		newsAssignedList.remove(redaction.getNewsList().get(newsIndex));
+	return newsAssignedList;
 	
 	}
 	
 	public String parseRedactorNewsListAssigned () {		
 		String redactorNewsListAssigned = "";
-		for (int i=0; i< this.redactorNewsListAssigned.size(); i++) {
-			redactorNewsListAssigned += this.redactorNewsListAssigned.get(i) + " \n";
+		for (int i=0; i< this.newsAssignedList.size(); i++) {
+			redactorNewsListAssigned += this.newsAssignedList.get(i) + " \n";
 		}
 		return redactorNewsListAssigned;
 	}
@@ -74,7 +71,23 @@ public class Redactor {
 		
 		return redactorSalary;
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Redactor other = (Redactor) obj;
+		if (redactorDNI == null) {
+			if (other.redactorDNI != null)
+				return false;
+		} else if (!redactorDNI.equals(other.redactorDNI))
+			return false;
+		return true;
+	}
 
 	@Override
 	public String toString() {
