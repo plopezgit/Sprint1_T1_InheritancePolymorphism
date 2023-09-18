@@ -71,14 +71,14 @@ public class SportRedaction {
 		return redactorList;
 	}
 	
-	public int existNews (int newsID) {
+	int existNews (int newsID) {
 		News news = new News(newsID);
 		int newsIndex = newsList.indexOf(news);
 		
 		return newsIndex;
 	}
 	
-	public int existRedactor (String redactorDNI) {
+	int existRedactor (String redactorDNI) {
 		Redactor redactor = new Redactor(redactorDNI);
 		int redactorIndex = redactorList.indexOf(redactor);
 		
