@@ -76,7 +76,7 @@ From the motorcycling news, you must indicate which team (String) they are from.
 News is sold to different media. To know the price of each news item we must implement a method called calculateNewsPrice().
 
 > ##### Solution notes:
-> - ...
+> - Learned: int redactorIndex = redactorList.indexOf(redactor);
 
 
 **Logic input:**
