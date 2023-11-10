@@ -1,6 +1,6 @@
 package N1Exe1;
 
-public class ExecuteInstrument {
+public class App {
 
 	public static void main(String[] args) {
 		

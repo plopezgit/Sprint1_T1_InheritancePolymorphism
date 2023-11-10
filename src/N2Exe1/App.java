@@ -1,6 +1,6 @@
 package N2Exe1;
 
-public class ExecuteTelephone {
+public class App {
 
 	public static void main(String[] args) {
 		
@@ -11,6 +11,9 @@ public class ExecuteTelephone {
 		System.out.println(instanceOfSmartphone.takeAPhoto());
 		
 		System.out.println(instanceOfSmartphone.alarm());
+		
+		Camara camara = () -> "A photo is being taking";
+		System.out.println(camara.takeAPhoto());
 		
 	}
 

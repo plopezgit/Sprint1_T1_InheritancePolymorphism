@@ -1,6 +1,6 @@
 package N1Exe2;
 
-public class ExecuteCar {
+public class App {
 
 	public static void main(String[] args) {
 		
