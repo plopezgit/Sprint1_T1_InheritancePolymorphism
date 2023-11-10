@@ -30,7 +30,7 @@ Demonstrate how to invoke static and non-static method from main() of main class
 
 > ##### Solution notes:
 > - Is there one that can be initialized in the class constructor? private final int pontencyCar; The final attribute.
-> - The exercise demostration is simply solved by invoking the the sttaic method from Class name (Car) declartion, and the non-static one from an specific object instance (oneCar).
+> - The exercise demostration is simply solved by invoking the static method from Class name (Car) declaration, and the non-static one from an specific object instance (oneCar).
 
 
 Level 2
