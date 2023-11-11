@@ -1,4 +1,4 @@
-package N3Exe1;
+package n3Exe1;
 
 public class News_Football extends News {
 	

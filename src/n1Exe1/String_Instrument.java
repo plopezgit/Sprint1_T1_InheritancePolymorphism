@@ -1,4 +1,4 @@
-package N1Exe1;
+package n1Exe1;
 
 public class String_Instrument extends Instrument {
 	

@@ -1,4 +1,4 @@
-package N3Exe1;
+package n3Exe1;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;

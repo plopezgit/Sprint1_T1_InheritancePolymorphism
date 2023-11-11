@@ -1,4 +1,4 @@
-package N2Exe1;
+package n2Exe1;
 
 public class Smartphone extends Telephone implements Camara, Clock {
 	

@@ -1,4 +1,4 @@
-package N1Exe2;
+package n1Exe2;
 
 public class App {
 
