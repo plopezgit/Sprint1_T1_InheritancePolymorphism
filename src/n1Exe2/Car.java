@@ -10,10 +10,6 @@ public class Car {
 		this.pontencyCar= 200;
 	}
 	
-	public Car (String modelCar) {
-		this.pontencyCar= 200;
-	}
-
 	public static String getModelCar() {
 		return modelCar;
 	}

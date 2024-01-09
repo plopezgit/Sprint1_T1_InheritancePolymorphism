@@ -6,7 +6,7 @@ public class App {
 		
 		// cómo invocar el método estático
 		System.out.println(Car.brakeCar());
-		Car instanceOfCar = new Car("Mazda");
+		Car instanceOfCar = new Car();
 		// cómo invocar el método No estático
 		System.out.println(instanceOfCar.accelerateCar());
 		
